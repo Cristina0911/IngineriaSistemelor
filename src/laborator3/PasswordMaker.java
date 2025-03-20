@@ -47,6 +47,7 @@ public class PasswordMaker {
         for (int i = 0; i < length; i++) {
             sb.append(source.charAt(random.nextInt(source.length())));
         }
+
         return sb.toString();
 }
 

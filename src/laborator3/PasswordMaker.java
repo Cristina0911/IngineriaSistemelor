@@ -1,5 +1,6 @@
 package laborator3;
 import java.security.SecureRandom;
+
 import java.util.Random;
 
 public class PasswordMaker {

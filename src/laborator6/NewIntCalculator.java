@@ -20,10 +20,21 @@ public class NewIntCalculator extends ACalculator {
         state = (Integer) state * a;
         return this;
     }
-
+    public NewIntCalculator divide(int a) {
+        if (a == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        state = (Integer) state / a;
+        return this;
+    }
     @Override
     public NewIntCalculator init() {
         state = 0;
         return this;
+    }
+
+    @Override
+    public NewIntCalculator state(int i) {
+        return null;
     }
 }

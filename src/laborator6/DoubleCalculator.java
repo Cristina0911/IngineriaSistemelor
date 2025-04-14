@@ -29,7 +29,6 @@ public class DoubleCalculator extends ACalculator {
         return this;
     }
 
-
     @Override
     public DoubleCalculator init() {
         state = 0.0;

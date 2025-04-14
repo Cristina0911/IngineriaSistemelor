@@ -27,6 +27,7 @@ public class NewIntCalculator extends ACalculator {
         state = (Integer) state / a;
         return this;
     }
+
     @Override
     public NewIntCalculator init() {
         state = 0;

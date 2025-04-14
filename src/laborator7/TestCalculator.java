@@ -61,7 +61,6 @@ public class TestCalculator {
     public void testDividePositives() {
         intCalc = new NewIntCalculator(10);
         intCalc.state=(Integer) intCalc.state/2;
-
     }
 
     @Test

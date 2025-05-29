@@ -1,5 +1,7 @@
 package laborator8;
 
+
+import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -20,7 +22,7 @@ public class ExcelGenerator {
         data.put("5", new Object[] {"Brian", "Schultz", 7, 6, 8, 9});
 
         Workbook workbook = new XSSFWorkbook();
-        Sheet sheet = workbook.createSheet("Rezultate");
+        Sheet sheet = (Sheet) workbook.createSheet("Rezultate");
 
         // 2. Stiluri
         CellStyle boldGreen = workbook.createCellStyle();
@@ -36,7 +38,7 @@ public class ExcelGenerator {
 
         int rowNum = 0;
         for (Map.Entry<String, Object[]> entry : data.entrySet()) {
-            Row row = sheet.createRow(rowNum);
+            Row row = ((org.apache.poi.ss.usermodel.Sheet) sheet).createRow(rowNum);
             Object[] objArr = entry.getValue();
 
             for (int col = 0; col < objArr.length; col++) {
@@ -70,7 +72,7 @@ public class ExcelGenerator {
 
         // Auto-size columns
         for (int i = 0; i < 8; i++) {
-            sheet.autoSizeColumn(i);
+            ((org.apache.poi.xssf.usermodel.XSSFSheet) sheet).autoSizeColumn(i);
         }
 
         // 4. Salvare
